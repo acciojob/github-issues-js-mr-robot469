@@ -3,6 +3,7 @@ let pageNumberHere = 1;
 let btn_prev = document.getElementById("load_prev")
 let btn_Next = document.getElementById("load_next")
 let list     = document.getElementById("list");
+let heading = document.getElementById('heading');
 
 async function getData(){
 	const response = await fetch(`https://api.github.com/repositories/1296269/issues?page=${pageNumberHere}&per_page=5`);
@@ -27,6 +28,7 @@ async function getData(){
 btn_prev.addEventListener("click",function(){
 		 pageNumberHere = pageNumberHere - 1;
          getData();
+         heading.innerHTML = `Page number ${pageNumberHere}`
 
 })
 
@@ -34,6 +36,7 @@ btn_prev.addEventListener("click",function(){
 btn_Next.addEventListener("click",function(){
 		 pageNumberHere = pageNumberHere  + 1;
          getData();
+         heading.innerHTML = `Page number ${pageNumberHere}`
 })
 
 getData();
