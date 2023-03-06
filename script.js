@@ -15,11 +15,6 @@ async function getData(){
     })
     list.innerHTML = users;
 
-    if (pageNumberHere == 1) {
-        btn_prev.disabled = true;
-      } else {
-        btn_prev.disabled = false;
-      }
 }
 
 
