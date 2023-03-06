@@ -11,7 +11,7 @@ async function getData(){
     console.log(data);
     let users = " "
     data.map((item)=>{
-         users+= `<li>${item.url}</li>`
+         users+= `<li>${item.title}</li>`
     })
     list.innerHTML = users;
 
